@@ -82,6 +82,24 @@ public class LogEntry implements Comparable<LogEntry>
     }
     
     /**
+     * Return the minute.
+     * @return The minute field from the log line.
+     */
+    public int getDay()
+    {
+        return dataValues[DAY];
+    }
+    
+    /**
+     * Return the minute.
+     * @return The minute field from the log line.
+     */
+    public int getMonth()
+    {
+        return dataValues[MONTH];
+    }
+    
+    /**
      * Create a string representation of the data.
      * This is not necessarily identical with the
      * text of the original log line.
@@ -133,7 +151,7 @@ public class LogEntry implements Comparable<LogEntry>
         when = Calendar.getInstance();
         // Adjust from 1-based month and day to 0-based.
         when.set(dataValues[YEAR],
-                 dataValues[MONTH] - 1, dataValues[DAY] - 1,
+                 dataValues[MONTH]-1, dataValues[DAY]-1,
                  dataValues[HOUR], dataValues[MINUTE]);
     }
     
